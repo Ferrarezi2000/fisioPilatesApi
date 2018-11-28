@@ -17,7 +17,7 @@ class CreateAlunoTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('observacao')->nullable();
-            $table->date('data_nascimento')->nullable();
+            $table->string('data_nascimento')->nullable();
             $table->timestamps();
         });
     }

@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
 {
+    public function listar(){
+        $professores = Professor::all();
+        return response()->json($professores);
+    }
+
     public function cadastrar(Request $request, Professor $professor){
         $professor = Professor::create($request->all());
         return response()->json($professor);

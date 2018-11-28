@@ -17,12 +17,14 @@ $router->delete('/adm/{id}', 'AdministradorController@deletar');
 $router->post('/aluno', 'AlunoController@cadastrar');
 $router->put('/aluno/{id}', 'AlunoController@editar');
 $router->get('/aluno/{id}', 'AlunoController@buscar');
+$router->get('/alunos', 'AlunoController@listar');
 $router->delete('/aluno/{id}', 'AlunoController@deletar');
 
 //Professor
 $router->post('/professor', 'ProfessorController@cadastrar');
 $router->put('/professor/{id}', 'ProfessorController@editar');
 $router->get('/professor/{id}', 'ProfessorController@buscar');
+$router->get('/professores', 'ProfessorController@listar');
 $router->delete('/professor/{id}', 'ProfessorController@deletar');
 
 //Agenda

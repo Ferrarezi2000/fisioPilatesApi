@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class AlunoController extends Controller
 {
+    public function listar(){
+        $alunos = Aluno::all();
+        return response()->json($alunos);
+    }
+
     public function cadastrar(Request $request, Aluno $aluno){
         $aluno = Aluno::create($request->all());
         return response()->json($aluno);

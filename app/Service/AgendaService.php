@@ -17,7 +17,7 @@ class AgendaService
             $agenda->save();
             return response()->json($agenda);
         }
-        return response()->json('Limite máximo de alunos no horário desejado excedido.');
+        return response()->json('Limite máximo de alunos no horário desejado excedido.', 404);
     }
 
     public function addProfessorAluno(){
