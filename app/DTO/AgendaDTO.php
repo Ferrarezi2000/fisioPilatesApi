@@ -4,8 +4,8 @@ namespace App\DTO;
 
 class AgendaDTO
 {
-    public $dia_semana;
-    public $hora;
+    public $lista;
+    public $qtdSemana;
     public $aluno_id;
     public $professor_id;
 }

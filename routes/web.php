@@ -33,3 +33,17 @@ $router->get('/agenda', 'AgendaController@listar');
 $router->put('/agenda/{id}', 'AgendaController@editar');
 $router->get('/agenda/{id}', 'AgendaController@buscar');
 $router->delete('/agenda/{id}', 'AgendaController@deletar');
+
+//Horario
+$router->post('/horario', 'HorarioController@cadastrar');
+$router->get('/horario', 'HorarioController@listar');
+$router->put('/horario/{id}', 'HorarioController@editar');
+$router->get('/horario/{id}', 'HorarioController@buscar');
+$router->delete('/horario/{id}', 'HorarioController@deletar');
+
+//Semana
+$router->post('/semana', 'SemanaController@cadastrar');
+$router->get('/semana', 'SemanaController@listar');
+$router->put('/semana/{id}', 'SemanaController@editar');
+$router->get('/semana/{id}', 'SemanaController@buscar');
+$router->delete('/semana/{id}', 'SemanaController@deletar');

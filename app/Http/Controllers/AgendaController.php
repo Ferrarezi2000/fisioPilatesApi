@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DTO\AgendaDTO;
 use App\Model\Agenda;
 use App\Service\AgendaService;
 use Illuminate\Http\Request;
@@ -19,9 +20,12 @@ class AgendaController extends Controller
         return $this->agendaService->addProfessorAluno();
     }
 
-    public function cadastrar(Request $request, Agenda $agenda){
-        $agenda->fill($request->all());
-        return $this->agendaService->verificarDisponibilidade($agenda);
+    public function cadastrar(Request $request, AgendaDTO $agendaDTO){
+        $agendaDTO->lista = $request->lista;
+        $agendaDTO->aluno_id = $request->aluno_id;
+        $agendaDTO->professor_id = $request->professor_id;
+        $agendaDTO->qtdSemana = $request->qtdSemana;
+        return $this->agendaService->efetuarCadastro($request);
     }
 
     public function editar(Request $request, $id){
