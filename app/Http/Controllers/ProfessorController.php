@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use App\Model\Administrador;
 use App\Model\Aluno;
 use App\Model\Professor;
+use App\Service\ProfessorService;
 use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
 {
+
+    private $professorService;
+
+    public function __construct(ProfessorService $professorService) {
+        $this->professorService = $professorService;
+    }
+
     public function listar(){
-        $professores = Professor::all();
-        return response()->json($professores);
+        return $this->professorService->lista();
     }
 
     public function cadastrar(Request $request, Professor $professor){

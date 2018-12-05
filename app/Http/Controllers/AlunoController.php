@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Model\Administrador;
 use App\Model\Aluno;
+use App\Service\AlunoService;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
 {
+    private $alunoService;
+
+    public function __construct(AlunoService $alunoService) {
+        $this->alunoService = $alunoService;
+    }
+
     public function listar(){
         $alunos = Aluno::all();
         return response()->json($alunos);
@@ -32,8 +39,7 @@ class AlunoController extends Controller
 
     public function deletar($id){
         $aluno = Aluno::find($id);
-        $aluno->delete();
-        return response()->json('Aluno removido com sucesso!');
+        return $this->alunoService->apagar($aluno);
     }
 
 }
