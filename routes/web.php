@@ -7,11 +7,8 @@ $router->get('/', function () use ($router) {
 //Login
 $router->post('/login', 'LoginController@logar');
 
-//Aministrador
-$router->post('/adm', 'AdministradorController@cadastrar');
-$router->put('/adm/{id}', 'AdministradorController@editar');
-$router->get('/adm/{id}', 'AdministradorController@buscar');
-$router->delete('/adm/{id}', 'AdministradorController@deletar');
+//Cadastro Inicial
+$router->post('/auto', 'CadastroInicialController@cadastrar');
 
 //Aluno
 $router->post('/aluno', 'AlunoController@cadastrar');
@@ -29,7 +26,7 @@ $router->delete('/professor/{id}', 'ProfessorController@deletar');
 
 //Agenda
 $router->post('/agenda', 'AgendaController@cadastrar');
-$router->get('/agenda', 'AgendaController@listar');
+$router->post('/agenda/professor', 'AgendaController@listar');
 $router->put('/agenda/{id}', 'AgendaController@editar');
 $router->get('/agenda/{id}', 'AgendaController@buscar');
 $router->delete('/agenda/{id}', 'AgendaController@deletar');

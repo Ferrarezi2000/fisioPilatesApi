@@ -4,10 +4,10 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Administrador extends Model
+class Controle extends Model
 {
-    protected $table = 'administrador';
-    protected $fillable = ['nome', 'senha', 'email'];
+    protected $table = 'controle';
+    protected $fillable = ['nome', 'concluido'];
     protected $hidden = ['created_at', 'updated_at'];
 
 }

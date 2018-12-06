@@ -30,6 +30,5 @@ class SemanaService
             $semana->dia = $item;
             $semana->save();
         }
-        return response()->json('Cadastro efetuado com sucesso!');
     }
 }

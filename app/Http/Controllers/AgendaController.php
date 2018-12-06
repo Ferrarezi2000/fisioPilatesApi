@@ -15,8 +15,8 @@ class AgendaController extends Controller
         $this->agendaService = $agendaService;
     }
 
-    public function listar(){
-        return $this->agendaService->addProfessorAluno();
+    public function listar(Request $request){
+        return $this->agendaService->listaPorDia($request);
     }
 
     public function cadastrar(Request $request){

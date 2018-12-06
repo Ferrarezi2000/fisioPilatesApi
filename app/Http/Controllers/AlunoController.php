@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Administrador;
 use App\Model\Aluno;
 use App\Service\AlunoService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AlunoController extends Controller
 {
@@ -16,7 +16,7 @@ class AlunoController extends Controller
     }
 
     public function listar(){
-        $alunos = Aluno::all();
+        $alunos = DB::table('aluno')->orderBy('nome', 'asc')->get();
         return response()->json($alunos);
     }
 

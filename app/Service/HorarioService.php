@@ -35,7 +35,6 @@ class HorarioService
                 $horario->save();
             }
         }
-        return response()->json('Cadastro efetuado com sucesso!');
     }
 
     public function joinHorario(){
