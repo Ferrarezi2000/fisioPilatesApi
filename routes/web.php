@@ -29,7 +29,8 @@ $router->post('/agenda', 'AgendaController@cadastrar');
 $router->post('/agenda/professor', 'AgendaController@listar');
 $router->put('/agenda/{id}', 'AgendaController@editar');
 $router->get('/agenda/{id}', 'AgendaController@buscar');
-$router->delete('/agenda/{id}', 'AgendaController@deletar');
+$router->get('/agenda/livre', 'AgendaController@listaLivre');
+$router->post('/agenda/deletar', 'AgendaController@deletar');
 
 //Horario
 $router->post('/horario', 'HorarioController@cadastrar');

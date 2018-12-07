@@ -52,4 +52,12 @@ class AgendaService
             return response()->json($diaSemana);
         }
     }
+
+    public function agendaLivre() {
+        $semana = Semana::all();
+        foreach ($semana as $dia) {
+            $dia->vagas = Horario::where('vagas', '<>', '0')->where('semana_id', '=', $dia->id)->get();
+        }
+        return response()->json($semana);
+    }
 }
